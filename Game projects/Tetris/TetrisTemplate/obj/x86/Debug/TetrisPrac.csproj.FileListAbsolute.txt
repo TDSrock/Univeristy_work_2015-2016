@@ -1,0 +1,11 @@
+C:\Users\sjors\OneDrive\Game projects\Tetris\TetrisTemplate\bin\x86\Debug\Content\block.xnb
+C:\Users\sjors\OneDrive\Game projects\Tetris\TetrisTemplate\bin\x86\Debug\Content\SpelFont.xnb
+C:\Users\sjors\OneDrive\Game projects\Tetris\TetrisTemplate\bin\x86\Debug\TetrisPrac.exe
+C:\Users\sjors\OneDrive\Game projects\Tetris\TetrisTemplate\bin\x86\Debug\TetrisPrac.pdb
+C:\Users\sjors\OneDrive\Game projects\Tetris\TetrisTemplate\obj\x86\Debug\TetrisPrac.csprojResolveAssemblyReference.cache
+C:\Users\sjors\OneDrive\Game projects\Tetris\TetrisTemplate\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\sjors\OneDrive\Game projects\Tetris\TetrisTemplate\obj\x86\Debug\TetrisPrac.exe
+C:\Users\sjors\OneDrive\Game projects\Tetris\TetrisTemplate\obj\x86\Debug\TetrisPrac.pdb
+C:\Users\sjors\OneDrive\Game projects\Tetris\TetrisTemplate\bin\x86\Debug\Content\BlockFallSE.xnb
+C:\Users\sjors\OneDrive\Game projects\Tetris\TetrisTemplate\bin\x86\Debug\Content\91 Building Walls in the Cold.xnb
+C:\Users\sjors\OneDrive\Game projects\Tetris\TetrisTemplate\bin\x86\Debug\Content\91 Building Walls in the Cold.wma

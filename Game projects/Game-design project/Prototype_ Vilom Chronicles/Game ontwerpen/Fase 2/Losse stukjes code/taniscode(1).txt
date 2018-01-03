@@ -1,0 +1,336 @@
+///all player handles
+//controls
+Key_Left = keyboard_check_direct(vk_left);
+Key_Right =  keyboard_check_direct(vk_right);
+Key_Up = keyboard_check_direct(vk_up);
+Key_Up_Release = keyboard_check_released(vk_up);
+Key_Down = keyboard_check_direct(vk_down);
+Key_Down_Release = keyboard_check_released(vk_down);
+Key_Jump = keyboard_check_pressed(ord('A'));
+Key_Attack = keyboard_check_direct(ord('D'));
+Key_Interact = keyboard_check_pressed(vk_space);
+Key_Block = keyboard_check_direct(ord('S'));
+Key_Throw = keyboard_check_direct(ord('F'));
+
+//Stats
+CurAttack = baseAttack;
+CurDefense = baseDefense;
+CurMagic = baseMagic;
+CurMR = baseMR;
+CurSpeed = baseSpeed;
+MaxHP = baseHP;
+CurHP = MaxHP - lostHP;
+hsp = 0;
+
+//Frame variables for input
+shieldRollWindow = 10;
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//Process inputs
+
+if (!onGround)
+    inAir = true;
+else inAir = false;
+
+//damage calc
+if (hit = 1){
+    lostHP = lostHP + Par_Enemy_Bullet.damage
+}
+//reset hit to 0
+hit = 0;
+
+if (stunState == false)
+{
+    if ((attacking == true) || (blocking == true))
+        actionState = true;
+    else actionState = false;
+
+
+    //speed changes from stat
+    if (swimming){
+        CurSpeed = CurSpeed / 3;
+    } else { //default
+    CurSpeed = CurSpeed;
+    }
+    // movementspeed calc
+    Speed = CurSpeed * SpeedMulti
+    
+    //facing left and right & movment left and right
+    if (Key_Left){
+        facing_Left = 1;
+        facing_Right = 0;
+        if (!blocking && !inAir)
+            hsp = -Speed;
+    }
+    
+    if (Key_Right){
+        facing_Left = 0;
+        facing_Right = 1;
+        if (!blocking && !inAir)
+            hsp = Speed;
+    }
+    
+    if (Key_Left && Key_Right){
+        facing_Left = 0;
+        facing_Right = 1;
+    }
+    if(Key_Block && onGround){
+        blocking = true;
+    }else{
+        blocking = false;
+    }
+    
+    //facing down and up and fall faster also climbing ladders
+    
+    if (Key_Up){
+        facing_Up = 1;
+    }else{
+        facing_Up = 0;
+    }
+    
+    if(Key_Down){
+        facing_Down = 1;
+    }else{
+        facing_Down = 0;
+    }
+    if(Key_Up && Key_Down){
+        facing_Down = 0;
+        facing_Up = 0;
+    }
+    if(facing_Down && onGround == 0 && ladder == 0 ){
+        vsp = vsp + 0.5;
+    }
+    
+    //jumping
+    if(!Key_Down = 1){
+        if (Key_Jump){
+            if(!swimming){
+                if(onGround){
+                    if (!actionState) {
+                        vsp = -12;
+                        if (facing_Right)
+                            hsp = 12;
+                        else hsp = -12;
+                        }
+                }else{
+                  if (doublejump && (attacking == false)){
+                        vsp = -10;
+                        doublejump = 0;
+                        if (facing_Right)
+                            hsp = 12;
+                        else hsp = -12;
+                    }
+                }
+            }else{
+            vsp = -5
+            }
+        }
+    }
+    //ladder
+    if((facing_Up || facing_Down)&& place_meeting(x,y,Par_Ladder) && (!actionState)){
+        if(facing_Up){
+            ladder = 1;
+            vsp = -5;
+            doublejump = 1;
+        }else{
+            ladder = 1;
+            vsp = 5 - grav;
+            doublejump = 1;
+        }
+    }else{
+    ladder = 0;
+    }
+    //interaction with objects
+    if (Key_Interact && (!actionState)){
+        if(instance_exists(_NPC)) {
+            inst = instance_nearest(x, y, _NPC);
+            if(distance_to_object(inst) < 16) { //If close enough to an NPC
+                //Show their messages
+                with(inst) {
+                    if(array_length_2d(message, 0) < 5) {
+                        //Manually if the dialog is entered manually
+                        var i;
+                        for(i = firstMessage; i < messageCount + firstMessage; i++) {
+                            dialog_msg(message[i, 0], message[i, 1], message[i, 2], message[i, 3]);
+                        }
+                    } else {
+                        //From array if there is a fifth element
+                        dialog_from_array(firstMessage, firstMessage + messageCount - 1);
+                    }
+                    if(firstMessage + messageCount < array_height_2d(message)) {
+                        firstMessage += messageCount; 
+                    }
+                }
+            }
+        }
+    }
+    
+    //Attacking
+    
+    if ((!blocking) && (hasSword))
+    {
+        if (Key_Attack)
+        {
+            if(onGround)
+                groundAttack = true;//Start ground attack
+            else airAttack = true ;//Start air attack
+        }
+        else if (Key_Throw)
+        {
+            ; //Throw Sword
+        }
+    }
+}
+
+//Special command input processing
+if (!stunState)
+{
+    //Shield roll
+    if (((shieldRollTimerL > 0) || (shieldRollTimerR > 0)) && blocking)
+        {
+        if (key_right && (shieldRollTimerR > 0))
+            {
+            rollRight = true;//Do the shieldroll to the right
+            shieldRollTimerR = 0;
+            }
+        else if (key_left && (shieldRollTimerR > 0))
+            {
+            rollLeft = true;//Do the shieldroll to the left
+            shieldRollTimerL = 0;
+            }
+        }
+    
+    else if (blocking && (key_left || key_right))
+            {
+            if (key_left)
+                {
+                shieldRollTimerR = 0;
+                shieldRollTimerL = shieldRollWindow;
+                }
+            if (key_right)
+                {
+                shieldRollTimerL = 0;
+                shieldRollTimerR = shieldRollWindow;
+                }
+            }
+
+
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+//Handle all counters
+if (shieldRollTimerR > 0)
+    shieldRollTimerR -= 1
+
+if (shieldRollTimerL > 0)
+    shieldRollTimerL -= 1
+    
+//////////////////////////////////////////////////////////////////////////////////////////////
+//Proces actions
+
+
+//gravity
+if(place_meeting(x,y,Par_Water)){
+    swimming = 1;
+    vsp += grav/3;
+    doublejump = 1;
+}else{
+    vsp += grav;
+    swimming = 0;
+}
+
+// collision and movement
+if (instance_place(x,y+vsp,Par_Jumpthrough) && sign(vsp) == 1){
+    if (!place_meeting(x,y,Par_Jumpthrough)){
+        while (!place_meeting(x,y+sign(vsp),Par_Jumpthrough)) y+=1;
+        vsp = 0;
+        onGround = 1;
+        doublejump = 1;
+        if(Key_Down = 1 and Key_Jump = 1){
+        y+=grav;
+        }
+    }    
+} 
+
+repeat(round(abs(hsp))) {
+    var blk, mov;
+    mov = 0;
+    blk = place_meeting(x+lengthdir_x(1,grv_dir+(sign(hsp)*90)),y+lengthdir_y(1,grv_dir+(sign(hsp)*90)),Par_Walls);
+    if(blk==1) {
+        for(a=1;a<=max_slp;a+=1) {
+            if(place_meeting(x+lengthdir_x(1,grv_dir+(sign(hsp)*90))-lengthdir_x(a,grv_dir),y+lengthdir_y(1,grv_dir+(sign(hsp)*90))-lengthdir_y(a,grv_dir),Par_Walls)==0) {
+                x  += lengthdir_x(1,grv_dir+(sign(hsp)*90))-lengthdir_x(a,grv_dir);
+                y  += lengthdir_y(1,grv_dir+(sign(hsp)*90))-lengthdir_y(a,grv_dir);
+                mov = 1;
+                break;
+            }
+        }
+        if(mov==0) {
+            hsp = 0;
+            break;
+        }
+    } else {
+        if(mov==0) {
+            for(a=max_slp;a>=1;a-=1) {
+                if(place_meeting(x+lengthdir_x(1,grv_dir+(sign(hsp)*90))+lengthdir_x(a,grv_dir),y+lengthdir_y(1,grv_dir+(sign(hsp)*90))+lengthdir_y(a,grv_dir),Par_Walls)==0 && (place_meeting(x+lengthdir_x(1,grv_dir+(sign(hsp)*90))+lengthdir_x(a,grv_dir),y+lengthdir_y(1,grv_dir+(sign(hsp)*90))+lengthdir_y(a,grv_dir),Par_Jumpthrough)==0 && sign(vsp)>-1)) {
+                    if(place_meeting(x+lengthdir_x(1,grv_dir+(sign(hsp)*90))+lengthdir_x(a+1,grv_dir),y+lengthdir_y(1,grv_dir+(sign(hsp)*90))+lengthdir_y(a+1,grv_dir),Par_Walls)==1 || place_meeting(x+lengthdir_x(1,grv_dir+(sign(hsp)*90))+lengthdir_x(a+1,grv_dir),y+lengthdir_y(1,grv_dir+(sign(hsp)*90))+lengthdir_y(a+1,grv_dir),Par_Jumpthrough)==1) {
+                        x  += lengthdir_x(1,grv_dir+(sign(hsp)*90))+lengthdir_x(a,grv_dir);
+                        y  += lengthdir_y(1,grv_dir+(sign(hsp)*90))+lengthdir_y(a,grv_dir);
+                        mov = 1;
+                        break;
+                    }
+                }
+            }
+        }
+        if(mov==0) {
+            x+= lengthdir_x(1,grv_dir+(sign(hsp)*90));
+            y+= lengthdir_y(1,grv_dir+(sign(hsp)*90));
+        }
+    }
+}
+var stop;
+stop = 0;
+repeat(round(abs(vsp))) {
+    if(place_meeting(x+lengthdir_x(1,grv_dir-90+(sign(vsp)*90)),y+lengthdir_y(1,grv_dir-90+(sign(vsp)*90)),Par_Walls)==1) {
+            if (place_meeting(x,y+1,Par_Walls)){
+            vsp    = 0;
+            onGround = 1;
+            doublejump = 1;
+            break;
+        }else{
+            vsp = 0;
+            break;
+        }
+    }else{
+    onGround = 0;
+    }
+    if(vsp==0)break;
+    x+= lengthdir_x(1,grv_dir-90+(sign(vsp)*90));
+    y+= lengthdir_y(1,grv_dir-90+(sign(vsp)*90));
+}
+
+free = 1;
+if(place_meeting(x+lengthdir_x(1,grv_dir),y+lengthdir_y(1,grv_dir),Par_Walls)==1) {
+    free = 0;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//Drawing
+
+//sprite drawing
+if (facing_Left = 1 && hsp = 0 && !facing_Down && !facing_Up){
+    sprite_index = test_Sprite_Player_Left;
+}else if(facing_Left && !facing_Down && !facing_Up){
+    sprite_index = test_Sprite_Player_Left;
+}else if (facing_Right && !facing_Down && !facing_Up){
+    sprite_index = test_Sprite_Player_Right;
+}else if (facing_Right = 1 && hsp = 0 && !facing_Down && !facing_Up){
+    sprite_index = test_Sprite_Player_Right;
+}else if(facing_Down){
+    sprite_index = test_sprite_Player_Down
+}else if(facing_Up){
+    sprite_index = test_sprite_Player_Up
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////

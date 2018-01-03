@@ -1,0 +1,98 @@
+C:\Users\sjors\Desktop\UU\Gameprogrammeren\Pong\Pong\Pong\Pong\bin\x86\Debug\Content\SpriteFont1.xnb
+C:\Users\sjors\Desktop\UU\Gameprogrammeren\Pong\Pong\Pong\Pong\bin\x86\Debug\Pong.exe
+C:\Users\sjors\Desktop\UU\Gameprogrammeren\Pong\Pong\Pong\Pong\bin\x86\Debug\Pong.pdb
+C:\Users\sjors\Desktop\UU\Gameprogrammeren\Pong\Pong\Pong\Pong\obj\x86\Debug\Pong.csprojResolveAssemblyReference.cache
+C:\Users\sjors\Desktop\UU\Gameprogrammeren\Pong\Pong\Pong\Pong\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\sjors\Desktop\UU\Gameprogrammeren\Pong\Pong\Pong\Pong\obj\x86\Debug\Pong.exe
+C:\Users\sjors\Desktop\UU\Gameprogrammeren\Pong\Pong\Pong\Pong\obj\x86\Debug\Pong.pdb
+C:\Users\sjors\Desktop\UU\Gameprogrammeren\Pong\Pong\Pong\Pong\bin\x86\Debug\Content\rodeSpeler.xnb
+C:\Users\sjors\Desktop\UU\Gameprogrammeren\Pong\Pong\Pong\Pong\bin\x86\Debug\Content\blauweSpeler.xnb
+C:\Users\sjors\Desktop\UU\Gameprogrammeren\Pong\Pong\Pong\Pong\bin\x86\Debug\Content\bal.xnb
+C:\Users\sjors\Desktop\UU\Gameprogrammeren\Pong\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.dll
+C:\Users\sjors\Desktop\UU\Gameprogrammeren\Pong\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+C:\Users\sjors\Desktop\UU\Gameprogrammeren\Pong\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+C:\Users\sjors\Desktop\UU\Gameprogrammeren\Pong\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\Users\sjors\Desktop\UU\Gameprogrammeren\Pong\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+C:\Users\sjors\Desktop\UU\Gameprogrammeren\Pong\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.xml
+C:\Users\sjors\Desktop\UU\Gameprogrammeren\Pong\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+C:\Users\sjors\Desktop\UU\Gameprogrammeren\Pong\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+C:\Users\sjors\Desktop\UU\Gameprogrammeren\Pong\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+C:\Users\sjors\Desktop\UU\Gameprogrammeren\Pong\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+C:\Users\sjors\Desktop\UU\Gameprogrammeren\Pong\Pong\Pong\Pong\bin\x86\Debug\Content\CursorIndicator.xnb
+C:\Users\sjors\Desktop\UU\Gameprogrammeren\Pong\Pong\Pong\Pong\bin\x86\Debug\Content\SpriteFont2.xnb
+C:\Users\sjors\Desktop\UU\Gameprogrammeren\Pong\Pong\Pong\Pong\bin\x86\Debug\Content\Achtergrond.xnb
+C:\Users\sjors\Desktop\UU\Gameprogrammeren\Pong\Pong\Pong\Pong\bin\x86\Debug\Content\Healthrelic.xnb
+C:\Users\sjors\Desktop\UU\Gameprogrammeren\Pong\Pong\Pong\Pong\bin\x86\Debug\Content\Mustache1.xnb
+C:\Users\sjors\Desktop\UU\Gameprogrammeren\Pong\Pong\Pong\Pong\bin\x86\Debug\Content\PoroAchtergrond.xnb
+C:\Users\sjors\Desktop\UU\Gameprogrammeren\Pong\Pong\Pong\Pong\bin\x86\Debug\Content\Porokoekje2.xnb
+C:\Users\sjors\Desktop\UU\Gameprogrammeren\Pong\Pong\Pong\Pong\bin\x86\Debug\Content\scuttlecrab.xnb
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Content\SpriteFont1.xnb
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Content\SpriteFont2.xnb
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Content\rodeSpeler.xnb
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Content\blauweSpeler.xnb
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Content\bal.xnb
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Content\CursorIndicator.xnb
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Content\Achtergrond.xnb
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Content\Healthrelic.xnb
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Content\Mustache1.xnb
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Content\PoroAchtergrond.xnb
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Content\Porokoekje2.xnb
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Content\scuttlecrab.xnb
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Pong.exe
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Pong.pdb
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.dll
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.xml
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+C:\Users\sjors\Desktop\Pong\Pong\Pong\obj\x86\Debug\Pong.csprojResolveAssemblyReference.cache
+C:\Users\sjors\Desktop\Pong\Pong\Pong\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\sjors\Desktop\Pong\Pong\Pong\obj\x86\Debug\Pong.exe
+C:\Users\sjors\Desktop\Pong\Pong\Pong\obj\x86\Debug\Pong.pdb
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Content\SpriteFont3.xnb
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Content\SpriteFont4.xnb
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Content\Braum.xnb
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Content\Challengers.xnb
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Content\Braum.wma
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Content\Challengers.wma
+C:\Users\sjors\Desktop\Pong\Pong\Pong\bin\x86\Debug\Content\SpriteFont5.xnb
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Content\SpriteFont1.xnb
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Content\SpriteFont2.xnb
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Content\SpriteFont3.xnb
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Content\SpriteFont4.xnb
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Content\SpriteFont5.xnb
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Content\rodeSpeler.xnb
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Content\blauweSpeler.xnb
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Content\bal.xnb
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Content\CursorIndicator.xnb
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Content\Achtergrond.xnb
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Content\Healthrelic.xnb
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Content\Mustache1.xnb
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Content\PoroAchtergrond.xnb
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Content\Porokoekje2.xnb
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Content\scuttlecrab.xnb
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Content\06 Braum.xnb
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Content\12 Challengers.xnb
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Content\06 Braum.wma
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Content\12 Challengers.wma
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Pong.exe
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Pong.pdb
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.dll
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.xml
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\obj\x86\Debug\Pong.csprojResolveAssemblyReference.cache
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\obj\x86\Debug\Pong.exe
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\Pong\obj\x86\Debug\Pong.pdb

@@ -1,0 +1,12 @@
+C:\Users\sjors\Desktop\Uni\Datastruct\Binair_Zoeken_Opgave_2\Binair_Zoeken_Opgave_2\bin\Debug\Binair_Zoeken_Opgave_2.exe.config
+C:\Users\sjors\Desktop\Uni\Datastruct\Binair_Zoeken_Opgave_2\Binair_Zoeken_Opgave_2\bin\Debug\Binair_Zoeken_Opgave_2.exe
+C:\Users\sjors\Desktop\Uni\Datastruct\Binair_Zoeken_Opgave_2\Binair_Zoeken_Opgave_2\bin\Debug\Binair_Zoeken_Opgave_2.pdb
+C:\Users\sjors\Desktop\Uni\Datastruct\Binair_Zoeken_Opgave_2\Binair_Zoeken_Opgave_2\obj\Debug\Binair_Zoeken_Opgave_2.csprojResolveAssemblyReference.cache
+C:\Users\sjors\Desktop\Uni\Datastruct\Binair_Zoeken_Opgave_2\Binair_Zoeken_Opgave_2\obj\Debug\Binair_Zoeken_Opgave_2.exe
+C:\Users\sjors\Desktop\Uni\Datastruct\Binair_Zoeken_Opgave_2\Binair_Zoeken_Opgave_2\obj\Debug\Binair_Zoeken_Opgave_2.pdb
+C:\Users\sjors\Desktop\Uni\Datastruct\Quick_Opgave_3\Binair_Zoeken_Opgave_2\bin\Debug\Binair_Zoeken_Opgave_2.exe.config
+C:\Users\sjors\Desktop\Uni\Datastruct\Quick_Opgave_3\Binair_Zoeken_Opgave_2\obj\Debug\Binair_Zoeken_Opgave_2.exe
+C:\Users\sjors\Desktop\Uni\Datastruct\Quick_Opgave_3\Binair_Zoeken_Opgave_2\obj\Debug\Binair_Zoeken_Opgave_2.pdb
+C:\Users\sjors\Desktop\Uni\Datastruct\Quick_Opgave_3\Binair_Zoeken_Opgave_2\bin\Debug\Binair_Zoeken_Opgave_2.exe
+C:\Users\sjors\Desktop\Uni\Datastruct\Quick_Opgave_3\Binair_Zoeken_Opgave_2\bin\Debug\Binair_Zoeken_Opgave_2.pdb
+C:\Users\sjors\Desktop\Uni\Datastruct\Quick_Opgave_3\Binair_Zoeken_Opgave_2\obj\Debug\Binair_Zoeken_Opgave_2.csprojResolveAssemblyReference.cache

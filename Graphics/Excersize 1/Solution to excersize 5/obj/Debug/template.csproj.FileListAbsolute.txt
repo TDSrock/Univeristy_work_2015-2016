@@ -1,0 +1,10 @@
+C:\Users\sjors\Desktop\Uni\Graphics\template\bin\Debug\template.exe.config
+C:\Users\sjors\Desktop\Uni\Graphics\template\bin\Debug\template.exe
+C:\Users\sjors\Desktop\Uni\Graphics\template\bin\Debug\template.pdb
+C:\Users\sjors\Desktop\Uni\Graphics\template\bin\Debug\OpenTK.dll
+C:\Users\sjors\Desktop\Uni\Graphics\template\obj\Debug\template.csprojResolveAssemblyReference.cache
+C:\Users\sjors\Desktop\Uni\Graphics\template\obj\Debug\template.exe
+C:\Users\sjors\Desktop\Uni\Graphics\template\obj\Debug\template.pdb
+C:\Users\sjors\Desktop\Uni\Graphics\Excersize 1\Solution to excersize 5\bin\Debug\template.exe.config
+C:\Users\sjors\Desktop\Uni\Graphics\Excersize 1\Solution to excersize 5\obj\Debug\template.exe
+C:\Users\sjors\Desktop\Uni\Graphics\Excersize 1\Solution to excersize 5\obj\Debug\template.pdb

@@ -1,0 +1,3 @@
+C:\Users\sjors\Desktop\UU\Gameprogrammeren\Pong\Pong\Pong\PongContent\obj\x86\Debug\PongContent.contentprojResolveAssemblyReference.cache
+C:\Users\sjors\Desktop\Pong\Pong\PongContent\obj\x86\Debug\PongContent.contentprojResolveAssemblyReference.cache
+C:\Users\sjors\OneDrive\Game projects\Pong\Pong\PongContent\obj\x86\Debug\PongContent.contentprojResolveAssemblyReference.cache

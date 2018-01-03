@@ -1,0 +1,29 @@
+Students whom worked on this Tetris project:
+StudentName - StudentNumber
+Sjors Gielen - 5558956
+Baukje Velds - 5716306
+
+Hello this is student Sjors Gielen student number: 5558956
+
+On the Tetris project we had planned to split up the components of the game. I had assisted my partner to quite large lenghts on her components of the game.
+With that I was under the asumption that she would be able to complete her fair shair of the game. However about 36 hours before the deadline she sent me a text telling me that she did not understand how to work with Methods
+and Classes leading to it being extremely difficult for her to comprehend what I did and how and how to complete her components.
+She ultimatly gave me a copy paste of our previouse spagheti code game Poro Pong which was supposed to be the MenuState of the game. I looked at it and realised that, it woulden't even work properly(she missed some of the spagheti code's
+crucial components), it was spagheti code itself.
+
+As such I went into a mad scramble to attempt and complete the game on my own. I streamed almost all of the progress I made, as such the video footage is stored(so if this comes into question I can always prove it with the video's)
+I ended up getting the PlayState completed.
+
+The functions my partner made were
+WelkeTet()
+and
+Tetdown()
+Along with the Cooldown variable(which I later modified so it would become smaller over playtime)
+
+Other then those two components of the game I wrote all of the game.
+
+I hope that this is kept in consideration of your evaluation of the game.
+
+-Sjors Gielen
+
+PS: I prefer English, as such this was written in English.

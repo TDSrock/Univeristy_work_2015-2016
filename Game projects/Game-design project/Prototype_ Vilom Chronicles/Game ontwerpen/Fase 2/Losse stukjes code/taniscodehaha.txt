@@ -1,0 +1,766 @@
+///all player handles
+//controls
+Key_Left = keyboard_check_direct(vk_left);
+Key_Right =  keyboard_check_direct(vk_right);
+Key_Up = keyboard_check_direct(vk_up);
+Key_Up_Release = keyboard_check_released(vk_up);
+Key_Down = keyboard_check_direct(vk_down);
+Key_Down_Release = keyboard_check_released(vk_down);
+Key_Jump = keyboard_check_pressed(ord('A'));
+Key_Attack = keyboard_check_direct(ord('D'));
+Key_Interact = keyboard_check_pressed(vk_space);
+Key_Block = keyboard_check_direct(ord('S'));
+Key_Throw = keyboard_check_direct(ord('F'));
+
+input_handled = false;
+state_changed = false;
+
+//Stats
+CurAttack = baseAttack;
+CurDefense = baseDefense;
+CurMagic = baseMagic;
+CurMR = baseMR;
+CurSpeed = baseSpeed;
+MaxHP = baseHP;
+CurHP = MaxHP - lostHP;
+hsp = 0;
+
+//Frame variables for input
+shieldRollWindow = 10;
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+/*state omvat de movement
+Mogelijke states: idle, walking, blocking (omdat het alle movement blockt), neutral_jump, movement_jump, climbing, interacting
+
+attack_state omvat de type attack state waar de character in kan zijn:
+options: none, attack, throw*/
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//Handle state changes
+if ((state == "idle") && (state_changed == false))
+{
+    if (Key_block && (input_handled == false))
+    {
+     input_handled = true;
+     state_changed = true;
+     state = "block";
+    }
+    
+    if (Key_jump && (input_handled == false))
+    {
+     input_handled = true;
+     state_changed = true;
+     state = "jump_option";
+    }
+    
+    if (Key_Attack && (input_handled == false))
+    {
+     input_handled = true;
+     state_changed = true;
+     state = "attack_option";
+    }
+    
+    
+    if (Key_Throw && (input_handled == false))
+    {
+     input_handled = true;
+     state_changed = true;
+     state = "attack_option";
+    }
+    
+    if (Key_Interact && (input_handled == false))
+    {
+     input_handled = true;
+     state_changed = true;
+     state = "interact";
+    }
+    
+    if (Key_Left && Key_Right && (input_handled == false))
+    {
+     input_handled = true;
+     state_changed = true;
+     //Nothing changes
+    }
+    
+    if (Key_Right && (input_handled == false))
+    {
+     input_handled = true;
+     state_changed = true;
+     state = "walking";
+     facing_right = 1;
+     facing_left = 0;
+    }
+    
+    if (Key_Left && (input_handled == false))
+    {
+     input_handled = true;
+     state_changed = true;
+     state = "walking";
+     facing_right = 0;
+     facing_left = 1;
+    }
+    
+    if (Key_Up && (input_handled == false) && place_meeting(x,y,Par_Ladder))
+    {
+     input_handled = true;
+     state_changed = true;
+     ladder = 1;
+     state = "climbing";
+    }
+    
+    if (Key_down && (input_handled == false) && place_meeting(x,y,Par_Ladder))
+    {
+     input_handled = true;
+     state_changed = true;
+     ladder = 1;
+     state = "climbing";
+    }
+}
+////////////////////Walking
+if ((state == "walking") && (state_changed == false))
+{
+     if (Key_block && (input_handled == false))
+    {
+     input_handled = true;
+     state_changed = true;
+     state = "block";
+    }
+    
+    if (Key_jump && (input_handled == false))
+    {
+     input_handled = true;
+     state_changed = true;
+     state = "jump_option";
+    }
+    
+    if (Key_Attack && (input_handled == false))
+    {
+     input_handled = true;
+     state_changed = true;
+     state = "attack_option";
+    }
+    
+    if (Key_Throw && (input_handled == false))
+    {
+     input_handled = true;
+     state_changed = true;
+     state = "attack_option";
+    }
+    
+    if (Key_Interact && (input_handled == false))
+    {
+     input_handled = true;
+     state_changed = true;
+     state = "interact";
+    }
+    
+    if (Key_Left && Key_Right && (input_handled == false))
+    {
+     input_handled = true;
+     state_changed = true;
+     state = "idle";
+    }
+    
+    if (Key_Right && (input_handled == false) && (facing_right == 0))
+    {
+     input_handled = true;
+     state_changed = true;
+     state = "walking";
+     facing_right = 1;
+     facing_left = 0;
+    }
+    
+    if (Key_Left && (input_handled == false) && (facing_left == 0))
+    {
+     input_handled = true;
+     state_changed = true;
+     state = "walking";
+     facing_right = 0;
+     facing_left = 1;
+    }
+    
+    if (Key_Up && (input_handled == false) && place_meeting(x,y,Par_Ladder))
+    {
+     input_handled = true;
+     state_changed = true;
+     ladder = 1;
+     state = "climbing";
+    }
+    
+    if (Key_down && (input_handled == false) && place_meeting(x,y,Par_Ladder))
+    {
+     input_handled = true;
+     state_changed = true;
+     ladder = 1;
+     state = "climbing";
+    }
+}
+//////////////////////// Jumping
+if ((state == "neutral_jump") && (state_changed == false))
+{
+    if (Key_jump && (input_handled == false) && (doublejump==1))
+    {
+     input_handled = true;
+     state_changed = true;
+     state = "jump_option";
+     doublejump = 0;
+    }
+    
+    if (Key_Attack && (input_handled == false))
+    {
+     input_handled = true;
+     state_changed = true;
+     attack_state = "attack";
+    }
+    
+    if (Key_Throw && (input_handled == false))
+    {
+     input_handled = true;
+     state_changed = true;
+     attack_state = "throw";
+    }
+}
+
+if ((state == "movement_jump") && (state_changed == false))
+{
+    if (Key_jump && (input_handled == false) && (doublejump==1))
+    {
+     input_handled = true;
+     state_changed = true;
+     state = "jump_option";
+     doublejump = 0;
+    }
+    
+    if (Key_Attack && (input_handled == false))
+    {
+     input_handled = true;
+     state_changed = true;
+     attack_state = "attack";
+    }
+    
+    if (Key_Throw && (input_handled == false))
+    {
+     input_handled = true;
+     state_changed = true;
+     attack_state = "throw";
+    }
+}
+
+///////////////////////Blocking
+if ((state == "blocking") && (state_changed == false))
+{
+ if (!Key_Block) 
+ {   
+    if (Key_jump && (input_handled == false))
+    {
+     input_handled = true;
+     state_changed = true;
+     state = "jump_option";
+    }
+    
+    if (Key_Attack && (input_handled == false))
+    {
+     input_handled = true;
+     state_changed = true;
+     state = "attack_option";
+    }
+    
+    if (Key_Throw && (input_handled == false))
+    {
+     input_handled = true;
+     state_changed = true;
+     state = "attack_option";
+    }
+    
+    if (Key_Interact && (input_handled == false))
+    {
+     input_handled = true;
+     state_changed = true;
+     state = "interact";
+    }
+    
+    if (Key_Left && Key_Right && (input_handled == false))
+    {
+     input_handled = true;
+     state_changed = true;
+     state = "idle";
+    }
+    
+    if (Key_Right && (input_handled == false))
+    {
+     input_handled = true;
+     state_changed = true;
+     state = "walking";
+     facing_right = 1;
+     facing_left = 0;
+    }
+    
+    if (Key_Left && (input_handled == false))
+    {
+     input_handled = true;
+     state_changed = true;
+     state = "walking";
+     facing_right = 0;
+     facing_left = 1;
+    }
+    
+    if (Key_Up && (input_handled == false) && place_meeting(x,y,Par_Ladder))
+    {
+     input_handled = true;
+     state_changed = true;
+     ladder = 1;
+     state = "climbing";
+    }
+    
+    if (Key_down && (input_handled == false) && place_meeting(x,y,Par_Ladder))
+    {
+     input_handled = true;
+     state_changed = true;
+     ladder = 1;
+     state = "climbing";
+    }
+ }
+ else
+ {
+  if (Key_Right && (facing_right == 0))
+  {
+     input_handled = true;
+     state_changed = true;
+     facing_right = 1;
+     facing_left = 0;
+  }
+  
+  if (Key_Left && (facing_left == 0))
+  {
+     input_handled = true;
+     state_changed = true;
+     facing_right = 1;
+     facing_left = 0;
+  }
+ }
+}
+///////////////////handle state options
+if (state == "jump_option")
+{
+        if (Key_Attack)
+        {
+            if (Key_Right)
+            {
+             state = "movement_jump";
+             attack_state = "attack";
+             facing_right = 1;
+             facing_left = 0;
+            }
+            
+            else if (Key_Left)
+            {
+             state = "movement_jump";
+             attack_state = "attack";
+             facing_right = 0;
+             facing_left = 1;
+            }
+            
+            else
+            {
+             state = "neutral_jump";
+             attack_state = "attack";
+            }
+        }
+        else if (Key_Throw)
+        {
+         if (Key_Right)
+            {
+             state = "movement_jump";
+             attack_state = "throw";
+             facing_right = 1;
+             facing_left = 0;
+            }
+            
+            else if (Key_Left)
+            {
+             state = "movement_jump";
+             attack_state = "throw";
+             facing_right = 0;
+             facing_left = 1;
+            }
+            
+            else
+            {
+             state = "neutral_jump";
+             attack_state = "throw";
+            }
+        }
+        else 
+        {
+         if (Key_Right)
+            {
+             state = "movement_jump";
+             facing_right = 1;
+             facing_left = 0;
+            }
+            
+            else if (Key_Left)
+            {
+             state = "movement_jump";
+             facing_right = 0;
+             facing_left = 1;
+            }
+            
+            else
+            {
+             state = "neutral_jump";
+            }
+        }
+}
+
+if (state == "attack_option")
+{
+    if (Key_Attack)
+    {
+         if (Key_Right && !Key_Left)
+                {
+                 state = "walking";
+                 facing_right = 1;
+                 facing_left = 0;
+                 attack_state = "attack";
+                }
+                
+                else if (Key_Left)
+                {
+                 state = "walking";
+                 facing_right = 0;
+                 facing_left = 1;
+                 attack_state = "attack";
+                }
+                
+                else
+                {
+                 state = "idle";
+                 attack_state = "attack";
+                }
+         }
+    if (Key_Throw)
+    {
+             if (Key_Right && !Key_Left)
+                    {
+                     state = "walking";
+                     facing_right = 1;
+                     facing_left = 0;
+                     attack_state = "throw";
+                    }
+                    
+                    else if (Key_Left)
+                    {
+                     state = "walking";
+                     facing_right = 0;
+                     facing_left = 1;
+                     attack_state = "throw";
+                    }
+                    
+                    else
+                    {
+                     state = "idle";
+                     attack_state = "throw";
+                    }
+             }
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+if (onGround)
+doublejump = 1;
+
+if (state == "walking")
+{
+    if (Key_Right)
+    {
+    hsp = Speed;
+    }
+    else
+    {
+    hsp = -Speed;
+    }
+}
+
+if (state == climbing)
+{
+    //facing down and up and fall faster also climbing ladders    
+    if (Key_Up){
+        facing_Up = 1;
+    }else{
+        facing_Up = 0;
+    }
+    
+    if(Key_Down){
+        facing_Down = 1;
+    }else{
+        facing_Down = 0;
+    }
+    if(Key_Up && Key_Down){
+        facing_Down = 0;
+        facing_Up = 0;
+    }
+    if(facing_Down && onGround == 0 && ladder == 0 ){
+        vsp = vsp + 0.5;
+    }
+    //ladder
+    if(facing_Up || facing_Down){
+        if(facing_Up){
+            ladder = 1;
+            vsp = -5;
+            doublejump = 1;
+        }else{
+            ladder = 1;
+            vsp = 5 - grav;
+            doublejump = 1;
+        }
+    }else{
+    ladder = 0;
+    }
+}
+
+if (state = "movement_jump")
+{   
+  //jumping
+  if(onGround)
+  {
+    vsp = -12;
+  }
+  if (doublejump == 0)
+  {
+  doublejump = -1;
+  vsp = -12;
+  }
+  if (facing_right == 1)
+   hsp = 12;
+  else hsp = -12;
+}
+
+
+
+
+/*
+    //interaction with objects
+    if (Key_Interact && (!actionState)){
+        if(instance_exists(_NPC)) {
+            inst = instance_nearest(x, y, _NPC);
+            if(distance_to_object(inst) < 16) { //If close enough to an NPC
+                //Show their messages
+                with(inst) {
+                    if(array_length_2d(message, 0) < 5) {
+                        //Manually if the dialog is entered manually
+                        var i;
+                        for(i = firstMessage; i < messageCount + firstMessage; i++) {
+                            dialog_msg(message[i, 0], message[i, 1], message[i, 2], message[i, 3]);
+                        }
+                    } else {
+                        //From array if there is a fifth element
+                        dialog_from_array(firstMessage, firstMessage + messageCount - 1);
+                    }
+                    if(firstMessage + messageCount < array_height_2d(message)) {
+                        firstMessage += messageCount; 
+                    }
+                }
+            }
+        }
+    }*/
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//Drawing
+
+//sprite drawing
+if (state == "idle")
+{
+sprite_index = spr_tanis_idle;
+}
+/////////////////////////////////////////////////////////////////////////////
+if (state == "walking")
+{
+    if (facing_right == 1)
+    {
+        if (attack_state == "none")
+        {
+        sprite_index = spr_tanis_walking_right;
+        }
+        else if (attack_state == "attack")
+        {
+        sprite_index = spr_tanis_walking_right_attacking;
+        //als animation af is attack_state = "none";
+        }
+        else if (attack_state == "throw")
+        {
+        sprite_index = spr_tanis_walking_right_throwing;
+        //als animation af is attack_state = "none";
+        }
+    }
+    else
+    {
+    if (attack_state == "none")
+        {
+        sprite_index = spr_tanis_walking_left;
+        }
+        else if (attack_state == "attack")
+        {
+        sprite_index = spr_tanis_walking_left_attacking;
+        //als animation af is attack_state = "none";
+        }
+        else if (attack_state == "throw")
+        {
+        sprite_index = spr_tanis_walking_left_throwing;
+        //als animation af is attack_state = "none";
+        }
+    
+    }
+} 
+///////////////////////////////////////////////////////////////////////////////
+
+if (state == "blocking")
+{
+    if (facing_right == 1)
+    sprite_index = spr_tanis_blocking_right;
+    else sprite_index = spr_tanis_blocking_left;
+}
+///////////////////////////////////////////////////////////////////////////////
+if (state == "jumping")
+{
+    if (facing_right == 1)
+    {
+        if (attack_state == "none")
+        {
+        sprite_index = spr_tanis_jumping_right;
+        }
+        else if (attack_state == "attack")
+        {
+        sprite_index = spr_tanis_jumping_right_attacking;
+        //als animation af is attack_state = "none";
+        }
+        else if (attack_state == "throw")
+        {
+        sprite_index = spr_tanis_jumping_right_throwing;
+        //als animation af is attack_state = "none";
+        }
+    }
+    else 
+    {
+        if (attack_state == "none")
+        {
+        sprite_index = spr_tanis_jumping_left;
+        }
+        else if (attack_state == "attack")
+        {
+        sprite_index = spr_tanis_jumping_left_attacking;
+        //als animation af is attack_state = "none";
+        }
+        else if (attack_state == "throw")
+        {
+        sprite_index = spr_tanis_jumping_left_throwing;
+        //als animation af is attack_state = "none";
+        }
+    }
+}
+////////////////////////////////////////////////////////////////
+if (state == "hitstun")
+{
+    if (facing_right == 1)
+    sprite_index = spr_tanis_hitstun_right;
+    else sprite_index = spr_tanis_hitstun_left;
+}
+
+if (state == "blockstun")
+{
+    if(facing_right == 1)
+    sprite_index = spr_tanis_blockstun_right;
+    else sprite_index = spr_tanis_blockstun_left;
+}
+    
+//////////////////////////////////////////////////////////////////////////////////////////////
+//Proces actions
+
+
+//gravity
+if(place_meeting(x,y,Par_Water)){
+    swimming = 1;
+    vsp += grav/3;
+    doublejump = 1;
+}else{
+    vsp += grav;
+    swimming = 0;
+}
+
+// collision and movement
+if (instance_place(x,y+vsp,Par_Jumpthrough) && sign(vsp) == 1){
+    if (!place_meeting(x,y,Par_Jumpthrough)){
+        while (!place_meeting(x,y+sign(vsp),Par_Jumpthrough)) y+=1;
+        vsp = 0;
+        onGround = 1;
+        doublejump = 1;
+        if(Key_Down = 1 and Key_Jump = 1){
+        y+=grav;
+        }
+    }    
+} 
+
+repeat(round(abs(hsp))) {
+    var blk, mov;
+    mov = 0;
+    blk = place_meeting(x+lengthdir_x(1,grv_dir+(sign(hsp)*90)),y+lengthdir_y(1,grv_dir+(sign(hsp)*90)),Par_Walls);
+    if(blk==1) {
+        for(a=1;a<=max_slp;a+=1) {
+            if(place_meeting(x+lengthdir_x(1,grv_dir+(sign(hsp)*90))-lengthdir_x(a,grv_dir),y+lengthdir_y(1,grv_dir+(sign(hsp)*90))-lengthdir_y(a,grv_dir),Par_Walls)==0) {
+                x  += lengthdir_x(1,grv_dir+(sign(hsp)*90))-lengthdir_x(a,grv_dir);
+                y  += lengthdir_y(1,grv_dir+(sign(hsp)*90))-lengthdir_y(a,grv_dir);
+                mov = 1;
+                break;
+            }
+        }
+        if(mov==0) {
+            hsp = 0;
+            break;
+        }
+    } else {
+        if(mov==0) {
+            for(a=max_slp;a>=1;a-=1) {
+                if(place_meeting(x+lengthdir_x(1,grv_dir+(sign(hsp)*90))+lengthdir_x(a,grv_dir),y+lengthdir_y(1,grv_dir+(sign(hsp)*90))+lengthdir_y(a,grv_dir),Par_Walls)==0 && (place_meeting(x+lengthdir_x(1,grv_dir+(sign(hsp)*90))+lengthdir_x(a,grv_dir),y+lengthdir_y(1,grv_dir+(sign(hsp)*90))+lengthdir_y(a,grv_dir),Par_Jumpthrough)==0 && sign(vsp)>-1)) {
+                    if(place_meeting(x+lengthdir_x(1,grv_dir+(sign(hsp)*90))+lengthdir_x(a+1,grv_dir),y+lengthdir_y(1,grv_dir+(sign(hsp)*90))+lengthdir_y(a+1,grv_dir),Par_Walls)==1 || place_meeting(x+lengthdir_x(1,grv_dir+(sign(hsp)*90))+lengthdir_x(a+1,grv_dir),y+lengthdir_y(1,grv_dir+(sign(hsp)*90))+lengthdir_y(a+1,grv_dir),Par_Jumpthrough)==1) {
+                        x  += lengthdir_x(1,grv_dir+(sign(hsp)*90))+lengthdir_x(a,grv_dir);
+                        y  += lengthdir_y(1,grv_dir+(sign(hsp)*90))+lengthdir_y(a,grv_dir);
+                        mov = 1;
+                        break;
+                    }
+                }
+            }
+        }
+        if(mov==0) {
+            x+= lengthdir_x(1,grv_dir+(sign(hsp)*90));
+            y+= lengthdir_y(1,grv_dir+(sign(hsp)*90));
+        }
+    }
+}
+var stop;
+stop = 0;
+repeat(round(abs(vsp))) {
+    if(place_meeting(x+lengthdir_x(1,grv_dir-90+(sign(vsp)*90)),y+lengthdir_y(1,grv_dir-90+(sign(vsp)*90)),Par_Walls)==1) {
+            if (place_meeting(x,y+1,Par_Walls)){
+            vsp    = 0;
+            onGround = 1;
+            doublejump = 1;
+            break;
+        }else{
+            vsp = 0;
+            break;
+        }
+    }else{
+    onGround = 0;
+    }
+    if(vsp==0)break;
+    x+= lengthdir_x(1,grv_dir-90+(sign(vsp)*90));
+    y+= lengthdir_y(1,grv_dir-90+(sign(vsp)*90));
+}
+
+free = 1;
+if(place_meeting(x+lengthdir_x(1,grv_dir),y+lengthdir_y(1,grv_dir),Par_Walls)==1) {
+    free = 0;
+}
+
+
+
