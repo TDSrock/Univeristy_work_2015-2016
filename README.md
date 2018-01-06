@@ -13,7 +13,9 @@ For the graphics classes we had 3 mayor excersizes to complete. First one was an
 This section may receive more information on each excersize(more specificly the latter 2) at a later date.
 
 # [](#header-1)Datastructers
-This section of the repo contains several C# console applications which completed certain tasks setout by our professor at the time.
+This section of the repo contains several C# console applications which completed certain tasks set-out by our professor at the time.
+
+This section may receive more information on each excersize at a later date.
 
 # [](#header-1)Other items
 The other couple of items are mostly cheat-sheets which were either for purposes of preparation for the exam(try to cram de data I know the worst into a small space) or the exam announced ahead of time that cheat sheets were allowed. As a result I created some.
