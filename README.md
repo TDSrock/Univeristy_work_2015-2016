@@ -1,37 +1,27 @@
-## Welcome to GitHub Pages
+This is yet another repo containing several projects. Mainly to save time on settings these up(as they were not originaly repo's)
 
-You can use the [editor on GitHub](https://github.com/TDSrock/Univeristy_work_2015-2016/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+# [](#header-1)Game Projects
+Within the game projects folder one can find some truly old code I wrote. The first version of Pong that I made(before I knew how to work with multipule files and classes). Aswell as the game directly after that (Tetris). Already a number of legs up in terms of coding convetions. Aswell as another game named Vilom Chronicles. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Vilom chronicles was a game created toghter with Cas Laugs and Frans Zoetmulder. The core concept of the game was to create a 2D figting platformer where you play through the game twice. First as the vilan of the story in which you go off, corrupt the land and capture the princess. Then once you completed that you start a Hero run inwhich you pass through the same levels as you did on your first playthrough however based on the actions the player had taken in the first run certain areas of the world would be (more)corrupted. More corruption would mean that the game would get more difficult. This game was my last real project in Game Maker.
 
-### Markdown
+This section may receive more information on each game project noted above at a later date.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+# [](#header-1)Graphics
+For the graphics classes we had 3 mayor excersizes to complete. First one was an introduction to openTK. The next was a raytracer and the last was a scenegraph within our own rasterizer. For this class I worked toghter with Cas Laugs and Frans Zoetmulder.
 
-```markdown
-Syntax highlighted code block
+This section may receive more information on each excersize(more specificly the latter 2) at a later date.
 
-# Header 1
-## Header 2
-### Header 3
+# [](#header-1)Datastructers
+This section of the repo contains several C# console applications which completed certain tasks setout by our professor at the time.
 
-- Bulleted
-- List
+# [](#header-1)Other items
+The other couple of items are mostly cheat-sheets which were either for purposes of preparation for the exam(try to cram de data I know the worst into a small space) or the exam announced ahead of time that cheat sheets were allowed. As a result I created some.
 
-1. Numbered
-2. List
+#### [](#header-4)Logic
+![](Logica/Voorkant%20cheat%20sheet.png)
+![](Logica/Cheat%20sheat%20backside.png)
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/TDSrock/Univeristy_work_2015-2016/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+#### [](#header-4)Databases
+![](Database/Cheat%20sheet%20images/Cheat-sheat-front.png)
+![](Database/Cheat%20sheet%20images/Cheat-sheat-back.png)
