@@ -3,7 +3,12 @@ This is yet another repo containing several projects. Mainly to save time on set
 # [](#header-1)Game Projects
 Within the game projects folder one can find some truly old code I wrote. The first version of Pong that I made(before I knew how to work with multipule files and classes). Aswell as the game directly after that (Tetris). Already a number of legs up in terms of coding convetions. Aswell as another game named Vilom Chronicles. 
 
-Vilom chronicles was a game created toghter with Cas Laugs and Frans Zoetmulder. The core concept of the game was to create a 2D figting platformer where you play through the game twice. First as the vilan of the story in which you go off, corrupt the land and capture the princess. Then once you completed that you start a Hero run inwhich you pass through the same levels as you did on your first playthrough however based on the actions the player had taken in the first run certain areas of the world would be (more)corrupted. More corruption would mean that the game would get more difficult. This game was my last real project in Game Maker.
+#### [](#header-4)Vilom Chronicles
+Vilom chronicles was a game created toghter with Cas Laugs and Frans Zoetmulder. The core concept of the game was to create a 2D figting platformer where you play through the game twice. First as the villain of the story in which you go off, corrupt the land and capture the princess. Then once you completed that you start a Hero run inwhich you pass through the same levels as you did on your first playthrough however based on the actions the player had taken in the first run certain areas of the world would be (more)corrupted. More corruption would mean that the game would get more difficult. This game was my last real project in Game Maker.
+
+Download a build of Vilom chonricles [HERE](https://drive.google.com/open?id=1L44uv9PBF_3cxjQ1SVdAxoMybtp_DFPH).
+
+#### [](#header-4)Others
 
 This section may receive more information on each game project noted above at a later date.
 
